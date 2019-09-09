@@ -34,7 +34,7 @@ module Lol
     # @param [Integer] encrypted_summoner_id Encrypted summoner ID associated with the player
     # @return [Array<DynamicModel>] list of league positions
     def summoner_positions encrypted_summoner_id:
-      result = perform_request api_url "positions/by-summoner/#{encrypted_summoner_id}"
+      result = perform_request api_url "entries/by-summoner/#{encrypted_summoner_id}"
       result.map { |c| DynamicModel.new c }
     end
   end
